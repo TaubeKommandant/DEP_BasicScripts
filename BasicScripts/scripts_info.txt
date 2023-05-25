@@ -1,18 +1,21 @@
 Scripts from https://github.com/TaubeKommandant list
 
 Imports:
-  call import___basic   -   Basic functions.
+  call import___basic -| Basic functions.
     
 Functions:
   Basic:
-    %call% <bat_file> <...arguments>   -   Call bat file with arguments. Example: %call% some.bat arg1 arg2
-    %callr% <bat_file> <res_variable_name> <...arguments>   -   Call bat file with arguments and return value using "return_value" command. Example: %callr% some.bat resVariable arg1 arg2
-    return_value <value>   -   Command to return value as result of bat script. Works with %callr%. Example: return_value 111
+    %call% <bat_file> <...arguments> -| Call bat file with arguments. Example: %call% some.bat arg1 arg2
+    %callr% <bat_file> <res_variable_name> <...arguments> -| Call bat file with arguments and return value using "return_value" command. Example: %callr% some.bat resVariable arg1 arg2
+	%ps_call% <ps_file_absolute_path> <...arguments>  -|  Same, but for powershell file.
+	%ps_callr% <ps_file_absolute_path> <res_variable_name> <...arguments>  -|  It use hack with file to return value from ps to bat.
+    return_value <value> -| Command to return value as result of bat script. Works with %callr%. Example: return_value 111
     
-    %get_absolute_path% <source_dir> <relative_file>   -   Convert relative path to absolute.
-    as_admin "<bat_file>"   -   Start bat file with admin rights.
+    as_admin "<bat_file>" -| Start bat file with admin rights.
+	%add_to_path% <dir_path> -| Add directory to global PATH variable.
+	%remove_from_path% <dir_path> -| Remove directory from global PATH variable.
     
 	
 Values:
   Basic:
-	%current_script_directory% - directory of current .bat file.
+	%current_script_directory% -| directory of current .bat file.
