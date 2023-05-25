@@ -13,8 +13,8 @@ if not exist "%all_dep_directory%" mkdir "%all_dep_directory%"
 if not exist "%dep_dir%" mkdir "%dep_dir%"
 
 REM Exit if dependency is installed.
-REM set /p dep_url_from_file= < %dep_check_file%
-REM if "%dep_url_from_file%"=="%dep_url%" (echo "Was installed before." & exit /b)
+set /p dep_url_from_file= < %dep_check_file%
+if "%dep_url_from_file%"=="%dep_url%" (echo "Was installed before. Check updates." & git pull & exit /b)
 
 git clone "%dep_url%" "%dep_dir%"
 echo %dep_url%> %dep_check_file%
