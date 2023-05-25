@@ -14,7 +14,7 @@ if not exist "%dep_dir%" mkdir "%dep_dir%"
 
 REM Exit if dependency is installed.
 set /p dep_url_from_file= < %dep_check_file%
-if "%dep_url_from_file%"=="%dep_url%" (echo "Was installed before. Check updates." & git pull & exit /b)
+if "%dep_url_from_file%"=="%dep_url%" (echo "Was installed before. Check updates." & git stash create TEMP & git -c fetch.parallel=0 -c submodule.fetchJobs=0 pull --progress "%dep_url%" & git stash pop & exit /b)
 
 git clone "%dep_url%" "%dep_dir%"
 echo %dep_url%> %dep_check_file%
