@@ -1,5 +1,10 @@
 Scripts from https://github.com/TaubeKommandant list
 
+Install:
+  install_dep <dependency_name> <git_url> -| Install dependency from git to APPDATA/__remote_dependencies.
+  install_dep___BasicScripts -| Install basic scripts and add them to PATH.
+  install_dep___7z -| Install 7z and add to PATH.
+
 Imports:
   call import___basic -| Basic functions.
     
