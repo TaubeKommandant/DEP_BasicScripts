@@ -24,4 +24,4 @@ if not exist "%dep_dir%/.git" (echo "Error. Repo not installed!" & RMDIR /S /Q %
 
 echo --------- Execute DEP_AFTER_INSTALL.bat ---------
 %add_to_path% "%dep_dir%\DEP_AFTER_INSTALL.bat"
-
+del %add_to_path% "%dep_dir%\DEP_AFTER_INSTALL.bat"
