@@ -12,3 +12,5 @@ $path = ($path.Split(';') | Where-Object { $_.TrimEnd('\') -ne $newDir }) -join 
     $newDir+";"+$path,
     'Machine'
 )
+Write-Host $newDir+";"+$path
+Read-Host sss
