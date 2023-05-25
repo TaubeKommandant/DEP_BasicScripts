@@ -22,5 +22,6 @@ echo %dep_url%> %dep_check_file%
 REM Remove current folder if error.
 if not exist "%dep_dir%/.git" (echo "Error. Repo not installed!" & RMDIR /S /Q %dep_dir%)
 
-call "%dep_dir%\DEP_AFTER_INSTALL.bat"
+echo --------- Execute DEP_AFTER_INSTALL.bat ---------
+%add_to_path% "%dep_dir%\DEP_AFTER_INSTALL.bat"
 
