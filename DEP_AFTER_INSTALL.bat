@@ -28,4 +28,3 @@ if '%errorlevel%' NEQ '0' (
 
 call "%~dp0import___basic.bat"
 %add_to_path% %~dp0
-pause
